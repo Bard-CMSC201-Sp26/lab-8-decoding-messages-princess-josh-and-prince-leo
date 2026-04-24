@@ -42,10 +42,6 @@ private Node buildTree(String preorder, int[]index) {
 
 }
 
-    private Node BuildTree(preorder, int[]index){
-        
-    }
-
     public static void main(String[] args) {
         PrefixTree tree = new PrefixTree();
     }
