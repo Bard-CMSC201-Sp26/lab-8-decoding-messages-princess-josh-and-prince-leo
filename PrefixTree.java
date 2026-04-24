@@ -1,24 +1,30 @@
-public class PrefixTree<Value extends Comparable<Value> >{
+import org.w3c.dom.Node;
+
+public class PrefixTree {
 
     private Node root;
     private int N;
 
     private class Node {
-        private Value val;
+        private char val;
         private Node left, right;
 
-        public Node(Value val) {
+        public Node(char val) {
             this.val = val;
-            this.left=null;
-            this.right=null;
+            this.left = null;
+            this.right = null;
         }
     }
-//constructor that reads preorder traversal and reconstructs tree
-public PrefixTree(String preorder){
-    this.root=buildTree(preorder, new int[]{0});
-}
-private Node buildTree(preorder, int[]index);{
-    if (index[0]>=preorder.length()){
+
+    public PrefixTree() {
+        }
+    // constructor that reads preorder traversal and reconstructs tree
+    public PrefixTree(String preorder) {
+        this.root = buildTree(preorder, new int[] { 0 });
+    }
+
+private Node buildTree(String preorder, int[]index) {
+    if (index[0] >= preorder.length()){
         return null;
     }
 
@@ -35,22 +41,13 @@ private Node buildTree(preorder, int[]index);{
     return node;
 
 }
-    public PrefixTree() {
-        private Node root;
-    }
 
-    private Value get(Node x, Value val) {
-        if (x == null)
-            return null;
-        int cmp = val.compareTo(x.val);
-        if (cmp < 0)
-            return get(x.left, val);
-        else if (cmp > 0)
-            return get(x.right, val);
-        else
-            return x.val;
-    }
     private Node BuildTree(preorder, int[]index){
         
     }
+
+    public static void main(String[] args) {
+        PrefixTree tree = new PrefixTree();
+    }
+
 }
