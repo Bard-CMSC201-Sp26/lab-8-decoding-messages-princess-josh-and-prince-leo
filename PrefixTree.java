@@ -1,4 +1,3 @@
-import org.w3c.dom.Node;
 
 public class PrefixTree {
 
@@ -28,7 +27,7 @@ private Node buildTree(String preorder, int[]index) {
         return null;
     }
 
-  char ch = preorder.charAt(index[0]);
+    char ch = preorder.charAt(index[0]);
     index[0]++;
     
     Node node = new Node(ch);
