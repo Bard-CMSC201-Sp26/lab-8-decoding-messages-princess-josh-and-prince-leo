@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class PrefixTree {
 
@@ -41,8 +42,26 @@ private Node buildTree(String preorder, int[]index) {
 
 }
 
+public void getEncodings() {
+    System.out.println("character     bits      encoding");
+    System.out.println("----------------------------------");
+    getEncodings(root, "");
+}
+
+private void getEncodings(Node current, String encoding) {
+    if (current.val != '*') {
+        System.out.println(current.val + "     " + encoding.length() + "     " + encoding);
+        return;
+    }
+    getEncodings(current.left, encoding + "0");
+    getEncodings(current.right, encoding + "1");
+}
     public static void main(String[] args) {
-        PrefixTree tree = new PrefixTree();
+        Scanner sc = new Scanner(System.in);
+        String p = sc.nextLine();
+        String b = sc.nextLine();
+        PrefixTree Wtree = new PrefixTree(p);
+
     }
 
 }
